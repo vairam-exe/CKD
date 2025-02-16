@@ -103,9 +103,8 @@ with tab2:  # Project Overview
             """)
     
     with col_eda:
-        st.subheader("Exploratory Data Analysis")
-        #st.image("placeholder_eda.png", caption="Feature Distribution & Correlation Analysis")
-        #st.caption("Replace 'placeholder_eda.png' with your actual EDA visualization")
+        st.subheader("Accuracy Analysis")
+        st.image("acc.png", caption="Accuracy Analysis")
 
 with tab3:  # Technical Details
     st.header('Methodology Overview')
