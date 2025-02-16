@@ -151,7 +151,6 @@ with tab3:  # Technical Details
 # Sidebar with documentation
 with st.sidebar:
     st.header("Clinical Reference Guide")
-    st.download_button("Download Full Methodology", "methodology_paper.pdf")
     st.markdown("""
     **Normal Ranges:**
     - Serum Creatinine: 0.7-1.3 mg/dL
