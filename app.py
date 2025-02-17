@@ -72,7 +72,7 @@ test4_data = {
     "sg": 1.025,
     "al": 0.0,
     "su": 0.0,
-    "rbc": 2.0,
+    "rbc": 1.0,
     "bu": 17.0,
     "sc": 1.2,
     "sod": 135.0,
@@ -112,23 +112,23 @@ with tab1:  # Prediction Interface
         col1, col2, col3 = st.columns(3)
         
         with col1:
-            bp = st.number_input('Blood Pressure (mmHg)', min_value=70.0, max_value=200.0, value=st.session_state.get("bp", 120.0), key="bp")
-            sg = st.number_input('Specific Gravity (Sg)', min_value=1.000, max_value=1.030, value=st.session_state.get("sg", 1.010), step=0.005, key="sg")
-            al = st.number_input('Albumin (0-5 scale)', min_value=0.0, max_value=5.0, value=st.session_state.get("al", 0.0), key="al")
-            su = st.number_input('Sugar (0-5 scale)', min_value=0.0, max_value=5.0, value=st.session_state.get("su", 0.0), key="su")
-            rbc = st.number_input('RBC Count (million cells/mcL)', min_value=2.0, max_value=6.0, value=st.session_state.get("rbc", 4.0), key="rbc")
-            bu = st.number_input('Blood Urea (mg/dL)', min_value=5.0, max_value=150.0, value=st.session_state.get("bu", 20.0), key="bu")
+            bp = st.number_input('Blood Pressure (mmHg)', value=st.session_state.get("bp", 120.0), key="bp")
+            sg = st.number_input('Specific Gravity (Sg)', value=st.session_state.get("sg", 1.010), step=0.005, key="sg")
+            al = st.number_input('Albumin (0-5 scale)', value=st.session_state.get("al", 0.0), key="al")
+            su = st.number_input('Sugar (0-5 scale)', value=st.session_state.get("su", 0.0), key="su")
+            rbc = st.number_input('RBC Count (million cells/mcL)', value=st.session_state.get("rbc", 4.0), key="rbc")
+            bu = st.number_input('Blood Urea (mg/dL)', value=st.session_state.get("bu", 20.0), key="bu")
         
         with col2:
-            sc = st.number_input('Serum Creatinine (mg/dL)', min_value=0.5, max_value=20.0, value=st.session_state.get("sc", 1.0), key="sc")
-            sod = st.number_input('Sodium (mEq/L)', min_value=100.0, max_value=160.0, value=st.session_state.get("sod", 140.0), key="sod")
-            pot = st.number_input('Potassium (mEq/L)', min_value=3.0, max_value=8.0, value=st.session_state.get("pot", 4.5), key="pot")
-            hemo = st.number_input('Hemoglobin (g/dL)', min_value=5.0, max_value=18.0, value=st.session_state.get("hemo", 12.0), key="hemo")
-            wbc = st.number_input('WBC Count (cells/mm³)', min_value=2000.0, max_value=25000.0, value=st.session_state.get("wbc", 8000.0), key="wbc")
+            sc = st.number_input('Serum Creatinine (mg/dL)', value=st.session_state.get("sc", 1.0), key="sc")
+            sod = st.number_input('Sodium (mEq/L)', value=st.session_state.get("sod", 140.0), key="sod")
+            pot = st.number_input('Potassium (mEq/L)', value=st.session_state.get("pot", 4.5), key="pot")
+            hemo = st.number_input('Hemoglobin (g/dL)', value=st.session_state.get("hemo", 12.0), key="hemo")
+            wbc = st.number_input('WBC Count (cells/mm³)', value=st.session_state.get("wbc", 8000.0), key="wbc")
         
         with col3:
-            rbcc = st.number_input('RBCC (million cells/mcL)', min_value=2.0, max_value=6.0, value=st.session_state.get("rbcc", 4.0), key="rbcc")
-            htn = st.number_input('Hypertension (0/1)', min_value=0, max_value=1, value=st.session_state.get("htn", 0), key="htn")
+            rbcc = st.number_input('RBCC (million cells/mcL)', value=st.session_state.get("rbcc", 4.0), key="rbcc")
+            htn = st.number_input('Hypertension (0/1)', value=st.session_state.get("htn", 0), key="htn")
     
     # Prediction logic
     if st.button('Run Diagnostic Analysis', type='primary'):
