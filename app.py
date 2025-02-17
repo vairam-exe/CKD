@@ -19,7 +19,7 @@ st.set_page_config(
 st.title('Chronic Kidney Disease (CKD) Detection System')
 
 # Create tabs for different sections
-tab1, tab2, tab3 = st.tabs(["Clinical Prediction", "Project Overview", "Technical Details"])
+tab1, tab2, tab3, tab4 = st.tabs(["Clinical Prediction", "Project Overview", "Technical Details", "Exploratory Data Analysis"])
 
 with tab1:  # Prediction Interface
     st.header('Real-time CKD Risk Assessment')
@@ -102,9 +102,9 @@ with tab2:  # Project Overview
             - 23% missing values handled via MICE imputation
             """)
     
-    with col_eda:
-        st.subheader("Accuracy Analysis")
-        st.image("acc.png", caption="Accuracy Analysis")
+    #with col_eda:
+        #st.subheader("Accuracy Analysis")
+        #st.image("acc.png", caption="Accuracy Analysis")
 
 with tab3:  # Technical Details
     st.header('Methodology Overview')
@@ -146,6 +146,10 @@ with tab3:  # Technical Details
         - Model Drift Monitoring: Monthly retraining cycle
         - Clinical Decision Support Integration
         """)
+with tab4:
+    st.header('Exploratory Data Analysis')
+    with st.expander("📊 Numerical Features Distributions", expanded=True):
+        st.image(" numerical_features_distribution.png", caption="Accuracy Analysis")
 
 # Sidebar with documentation
 with st.sidebar:
