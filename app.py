@@ -68,43 +68,36 @@ with tab1:  # Prediction Interface
 
 with tab2:  # Project Overview
     st.header('Research Context & Clinical Significance')
-    
-    col_info, col_eda = st.columns([2, 1])
-    
-    with col_info:
-        with st.expander("📌 Clinical Significance", expanded=True):
-            st.markdown("""
-            Chronic Kidney Disease affects **10% of global population** with:
-            - 40% undiagnosed in early stages
-            - 2x increased cardiovascular risk
-            - $84,000 annual treatment cost for late-stage patients
-            
-            Early detection can reduce progression risk by **60%** through:
-            - Dietary interventions
-            - Blood pressure control
-            - Medication management
-            """)
-            
-        with st.expander("📊 Key Analytical Findings", expanded=True):
-            st.markdown("""
-            **Model Performance Metrics:**
-            - AUC-ROC: 0.97 ± 0.02
-            - F1-Score: 0.93 ± 0.03
-            - Precision: 0.95 ± 0.04
-            
-            **Critical Biomarkers Identified:**
-            1. Serum Creatinine (↑ 142% impact)
-            2. Hemoglobin (↓ 89% impact)
-            3. Hypertension Status (↑ 78% impact)
-            
-            **Data Insights:**
-            - Non-linear relationships detected in 67% of features
-            - 23% missing values handled via MICE imputation
-            """)
-    
-    #with col_eda:
-        #st.subheader("Accuracy Analysis")
-        #st.image("acc.png", caption="Accuracy Analysis")
+
+    with st.expander("📌 Clinical Significance", expanded=True):
+        st.markdown("""
+        Chronic Kidney Disease affects **10% of global population** with:
+        - 40% undiagnosed in early stages
+        - 2x increased cardiovascular risk
+        - $84,000 annual treatment cost for late-stage patients
+
+        Early detection can reduce progression risk by **60%** through:
+        - Dietary interventions
+        - Blood pressure control
+        - Medication management
+        """)
+
+    with st.expander("📊 Key Analytical Findings", expanded=True):
+        st.markdown("""
+        **Model Performance Metrics:**
+        - AUC-ROC: 0.97 ± 0.02
+        - F1-Score: 0.93 ± 0.03
+        - Precision: 0.95 ± 0.04
+
+        **Critical Biomarkers Identified:**
+        1. Serum Creatinine (↑ 142% impact)
+        2. Hemoglobin (↓ 89% impact)
+        3. Hypertension Status (↑ 78% impact)
+
+        **Data Insights:**
+        - Non-linear relationships detected in 67% of features
+        - 23% missing values handled via MICE imputation
+        """)
 
 with tab3:  # Technical Details
     st.header('Methodology Overview')
@@ -148,8 +141,18 @@ with tab3:  # Technical Details
         """)
 with tab4:
     st.header('Exploratory Data Analysis')
+
     with st.expander("📊 Numerical Features Distributions", expanded=True):
-        st.image("numerical_features_distribution.png", caption="Accuracy Analysis")
+        st.image("numerical_features_distribution.png", caption="Numerical Feature Distributions")
+
+    with st.expander("🔥 Model Comparison", expanded=False):
+        st.image("model_comparison.png", caption="Model Comparison")
+
+    with st.expander("🌡️ Heatmap", expanded=False):
+        st.image("heatmap.png", caption="Heatmap")
+
+    with st.expander("📊 Categorical Columns", expanded=False):
+        st.image("categorical_columns.png", caption="Categorical Columns Distribution")
 
 # Sidebar with documentation
 with st.sidebar:
