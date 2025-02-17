@@ -149,7 +149,7 @@ with tab3:  # Technical Details
 with tab4:
     st.header('Exploratory Data Analysis')
     with st.expander("📊 Numerical Features Distributions", expanded=True):
-        st.image(" numerical_features_distribution.png", caption="Accuracy Analysis")
+        st.image("numerical_features_distribution.png", caption="Accuracy Analysis")
 
 # Sidebar with documentation
 with st.sidebar:
